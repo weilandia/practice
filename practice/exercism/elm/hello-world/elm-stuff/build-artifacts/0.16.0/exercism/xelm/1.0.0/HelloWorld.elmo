@@ -1,0 +1,16 @@
+Elm.HelloWorld = Elm.HelloWorld || {};
+Elm.HelloWorld.make = function (_elm) {
+   "use strict";
+   _elm.HelloWorld = _elm.HelloWorld || {};
+   if (_elm.HelloWorld.values) return _elm.HelloWorld.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var _op = {};
+   var helloWorld = function (name) {    return A2($Basics._op["++"],"Hello, ",A2($Basics._op["++"],A2($Maybe.withDefault,"World",name),"!"));};
+   return _elm.HelloWorld.values = {_op: _op,helloWorld: helloWorld};
+};

@@ -1,0 +1,33 @@
+{
+  "name": "pizza-express",
+  "version": "1.0.0",
+  "description": "A place to admire pizzaass.",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weilandia/pizza-express.git"
+  },
+  "keywords": [
+    "express",
+    "pizza"
+  ],
+  "author": "Nick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weilandia/pizza-express/issues"
+  },
+  "homepage": "https://github.com/weilandia/pizza-express#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "pug": "^2.0.0-alpha8"
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3",
+    "request": "^2.72.0"
+  }
+}
