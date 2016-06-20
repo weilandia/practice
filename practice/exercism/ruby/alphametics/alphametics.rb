@@ -4,27 +4,32 @@ class Alphametics
     @equation = equation
     @chars = build_set(equation.dup)
 
-    brute_force_solution
+    build_hash(brute_force_solution.map(&:to_i))
   end
 
   def brute_force_solution
-    [*'1'..'9'].combination(@chars.length).each { |number_arr|
+    [*'0'..'9'].permutation(@chars.length).find { |number_arr|
       translation = build_hash(number_arr)
 
       new_equation = @equation.chars.map do |char|
         translation[char] ? translation[char] : char
-      end.join
+      end.join.split(' ')
 
-      return translation if true_equation?(new_equation)
+      true_equation?(new_equation) == true
     }
   end
 
-  def true_equation?(string_equation)
-    equation = string_equation.split(' ').map.with_index { |char, i|
+  def true_equation?(equation)
+    initial_value, *chain = equation
+    chain.each_slice(2).reduce(initial_value.to_i) do |result, (operator, arg)|
+      result.send(operator, arg.to_i)
+    end
+  end
+
+  def translate_equation(string_equation)
+    string_equation.split(' ').map.with_index { |char, i|
       i.even? ? char.to_i : char
     }
-
-    require "pry"; binding.pry
   end
 
   def parse(equation)

@@ -7,6 +7,7 @@ class WordProblem
   def answer
     initial_value, *chain = valid_tokens
     chain.each_slice(2).reduce(initial_value.to_i) do |result, (operator, arg)|
+      require "pry"; binding.pry
       result.send(operator, arg.to_i)
     end
   end

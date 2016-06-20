@@ -26,7 +26,6 @@ class AlphameticsTest < Minitest::Test
   # end
 
   def test_solve_puzzle_with_multiplication
-    skip
     expect = {
       'I' => 8, 'F' => 2, 'D' => 3, 'R' => 9,
       'O' => 1
